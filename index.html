@@ -21,7 +21,13 @@
                     <span class="nav-role">Visual Designer</span>
                 </div>
             </div>
-            <div class="nav-right">
+
+            <div class="burger-menu" id="burgerToggle">
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-right" id="navMenu">
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="mailto:ayub@widiarko.com" class="btn-orange">Work with me</a>
@@ -29,27 +35,14 @@
         </nav>
 
         <section id="home" class="hero">
-            <div class="hero-header">
+            <div class="main-title-container">
+                <h1 class="hero-title">portfolio</h1>
+                <div class="box-badge status-label">#opentowork ✨</div>
                 <div class="badge-year">2026</div>
             </div>
 
-            <div class="main-title-container">
-                <h1 class="hero-title">portfolio</h1>
-                <div class="box-badge name-label">ayub widiarko</div>
-                <div class="box-badge status-label">#opentowork ✨</div>
-            </div>
-
             <div class="hero-footer">
-                <div class="tools-wrapper">
-                    <span class="tools-text">tools:</span>
-                    <div class="tools-list">
-                        <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/figma-5.svg" alt="Figma"></div>
-                        <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/adobe-illustrator-cc-icon.svg" alt="AI"></div>
-                        <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" alt="PS"></div>
-                        <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/after-effects-cc-1.svg" alt="AE"></div>
-                    </div>
-                </div>
-                <div class="scroll-down">↓</div>
+                <div class="scroll-down">↓ scroll</div>
             </div>
         </section>
 
@@ -94,33 +87,33 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script>
+        // Burger Menu Logic
+        const burger = document.getElementById('burgerToggle');
+        const menu = document.getElementById('navMenu');
+        
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // GSAP Animations
         window.addEventListener('load', () => {
             gsap.registerPlugin(ScrollTrigger);
-            
-            // Timeline Utama
-            const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+            const tl = gsap.timeline({ defaults: { ease: "power4.out", duration: 1.2 } });
 
-            // Initial Hidden State (Fix Flicker)
-            gsap.set([".nav", ".hero-header", ".hero-title", ".box-badge", ".tools-wrapper", ".scroll-down"], { opacity: 0 });
-            gsap.set(".box-badge", { scale: 0 });
+            gsap.set([".nav", ".hero-title", ".status-label", ".badge-year", ".scroll-down"], { opacity: 0 });
+            gsap.set([".status-label", ".badge-year"], { scale: 0 });
 
-            tl.to(".nav", { opacity: 1, y: 0, duration: 1 })
-              .to(".hero-header", { opacity: 1, y: 0 }, "-=0.7")
-              .to(".hero-title", { opacity: 1, y: 0, duration: 1.2 }, "-=0.8")
-              .to(".box-badge", { opacity: 1, scale: 1, stagger: 0.15, ease: "back.out(1.7)", duration: 0.8 }, "-=0.9")
-              .to(".tools-wrapper", { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
-              .to(".scroll-down", { opacity: 1, y: 0, duration: 0.8 }, "-=0.6");
+            tl.to(".nav", { opacity: 1, y: 0 })
+              .to(".hero-title", { opacity: 1, y: 0 }, "-=0.8")
+              .to(".status-label", { opacity: 1, scale: 1, ease: "back.out(1.7)" }, "-=0.9")
+              .to(".badge-year", { opacity: 1, scale: 1, ease: "back.out(1.7)" }, "-=1.1")
+              .to(".scroll-down", { opacity: 1, y: 0 }, "-=0.8");
 
-            // About Scroll Animation
             gsap.from(".about-grid", {
-                scrollTrigger: {
-                    trigger: ".about-section",
-                    start: "top 85%",
-                },
-                y: 30,
-                opacity: 0,
-                duration: 1,
-                ease: "power2.out"
+                scrollTrigger: { trigger: ".about-section", start: "top 80%" },
+                y: 50, opacity: 0, duration: 1.5
             });
         });
     </script>
