@@ -43,18 +43,20 @@
             <div class="hero-footer">
                 <div class="footer-left">
                     <p class="hero-sub">I help ERP & tech companies explain complex systems through clear and structured visuals.</p>
-                    <div class="tools-container">
-                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/figma-5.svg" alt="Figma"></div>
-                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/adobe-illustrator-cc-icon.svg" alt="AI"></div>
-                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" alt="PS"></div>
-                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/after-effects-cc-1.svg" alt="AE"></div>
+                    <div class="tools-wrapper">
+                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/figma-5.svg"></div>
+                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/adobe-illustrator-cc-icon.svg"></div>
+                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg"></div>
+                        <div class="tool-box"><img src="https://cdn.worldvectorlogo.com/logos/after-effects-cc-1.svg"></div>
                     </div>
                 </div>
                 <div class="scroll-down">↓</div>
             </div>
         </section>
-    </div> <section id="work" class="work-section">
-        <div class="work-dark-card">
+    </div>
+
+    <section id="work" class="work-section">
+        <div class="work-card-dark">
             </div>
     </section>
 
@@ -65,7 +67,7 @@
                     <h2 class="section-title">about<span class="dot-orange">.</span></h2>
                     <p class="about-text">
                         I help ERP & tech companies explain complex systems through clear and structured visuals.
-                        Focus on <strong>clarity</strong>, <strong>structure</strong>, and <strong>impact</strong>— not just aesthetics.
+                        Focus on <strong>clarity</strong>, <strong>structure</strong>, and <strong>impact</strong>.
                     </p>
                     <div class="tag-group">
                         <span class="tag">Brand Identity</span>
@@ -82,13 +84,6 @@
                             <div class="exp-content">
                                 <h4>Lead Visual Designer</h4>
                                 <p>TechCorp Solution</p>
-                            </div>
-                        </div>
-                        <div class="exp-item">
-                            <span class="exp-year">2022 — 2024</span>
-                            <div class="exp-content">
-                                <h4>Visual Identity Designer</h4>
-                                <p>Creative Studio ID</p>
                             </div>
                         </div>
                     </div>
@@ -109,11 +104,6 @@
               .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
               .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
               .from(".hero-sub, .scroll-down, .tool-box", { opacity: 0, y: 10, duration: 0.8, stagger: 0.1 }, "-=0.4");
-
-            gsap.from(".about-grid", {
-                scrollTrigger: { trigger: ".about-section", start: "top 85%" },
-                y: 40, opacity: 0, duration: 1, ease: "power3.out"
-            });
         });
     </script>
 </body>
