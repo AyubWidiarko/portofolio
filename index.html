@@ -37,11 +37,20 @@
             <div class="main-title-container">
                 <h1 class="hero-title">portfolio</h1>
                 <div class="box-badge name-label">ayub widiarko</div>
-                <div class="box-badge status-label">#opentowork ✨</div>
+                <div class="box-badge status-label">available ✨</div>
             </div>
 
             <div class="hero-footer">
-                <p class="hero-sub">I help ERP & tech companies explain complex systems through clear and structured visuals.</p>
+                <div class="tools-container">
+                    <span class="tools-label">Tools I use:</span>
+                    <div class="tools-wrapper">
+                        <div class="tool-item">Figma</div>
+                        <div class="tool-item">Ai</div>
+                        <div class="tool-item">Ps</div>
+                        <div class="tool-item">Ae</div>
+                        <div class="tool-item">Pr</div>
+                    </div>
+                </div>
                 <div class="scroll-down">↓</div>
             </div>
         </section>
@@ -91,13 +100,12 @@
             gsap.registerPlugin(ScrollTrigger);
             const tl = gsap.timeline();
             
-            // Set initial states to avoid flicker
             gsap.set(".box-badge", { opacity: 1, scale: 0 });
 
             tl.from(".nav", { y: -20, opacity: 0, duration: 0.8 })
               .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
               .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
-              .from(".hero-sub, .scroll-down", { opacity: 0, y: 10, duration: 0.8 }, "-=0.4");
+              .from(".tools-container, .scroll-down", { opacity: 0, y: 15, duration: 0.8, stagger: 0.2 }, "-=0.4");
 
             gsap.from(".about-grid", {
                 scrollTrigger: { trigger: ".about-section", start: "top 85%" },
