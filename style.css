@@ -38,7 +38,7 @@ body {
 .nav-role { font-size: 12px; color: #777; }
 
 .nav-right { display: flex; gap: 30px; align-items: center; }
-.nav-link { text-decoration: none; color: var(--black); font-weight: 600; font-size: 14px; transition: 0.3s; position: relative; }
+.nav-link { text-decoration: none; color: var(--black); font-weight: 600; font-size: 14px; transition: 0.3s; }
 .nav-link:hover { color: var(--orange); }
 
 .btn-orange {
@@ -73,10 +73,9 @@ body {
     line-height: 0.8;
     letter-spacing: -0.02em;
     position: relative;
-    z-index: 1; /* Teks di bawah badge */
+    z-index: 1;
 }
 
-/* BOX BADGE - FIX */
 .box-badge {
     position: absolute;
     background: white !important;
@@ -84,7 +83,7 @@ body {
     padding: 10px 22px;
     font-weight: 800;
     box-shadow: 6px 6px 0 var(--black);
-    z-index: 99; /* Pastikan angka ini paling tinggi */
+    z-index: 99;
     white-space: nowrap;
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -97,23 +96,45 @@ body {
 
 .box-badge:hover { transform: scale(1.1) translateY(-10px) rotate(0deg); box-shadow: 10px 10px 0 var(--black); }
 
-.hero-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 60px; }
-.hero-sub { max-width: 500px; font-size: 18px; font-weight: 500; line-height: 1.5; color: #444; }
+/* HERO FOOTER TOOLS REVISION */
+.hero-footer { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 60px; 
+}
+
+.tools-container { display: flex; flex-direction: column; gap: 10px; }
+.tools-label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+.tools-wrapper { display: flex; gap: 10px; }
+
+.tool-item {
+    padding: 8px 16px;
+    background: white;
+    border: 2.5px solid var(--black);
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 3px 3px 0 var(--black);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tool-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 6px 6px 0 var(--black);
+    background: var(--yellow);
+    cursor: default;
+}
+
 .scroll-down { font-size: 40px; color: var(--orange); font-weight: bold; }
 
 /* ABOUT SECTION */
 .about-section { padding: 100px 0; border-top: 2px solid var(--black); margin-top: 60px; }
 .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: start; }
-
 .section-title { font-size: 60px; font-weight: 800; margin-bottom: 25px; }
 .dot-orange { color: var(--orange); }
-
 .about-text { font-size: 24px; line-height: 1.6; margin-bottom: 40px; color: #333; }
 .tag-group { display: flex; flex-wrap: wrap; gap: 12px; }
-.tag {
-    padding: 8px 18px; border: 2px solid var(--black); background: white;
-    font-weight: 700; box-shadow: 4px 4px 0 var(--black); transition: 0.3s;
-}
+.tag { padding: 8px 18px; border: 2px solid var(--black); background: white; font-weight: 700; box-shadow: 4px 4px 0 var(--black); transition: 0.3s; }
 .tag:hover { background: var(--yellow); transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--black); }
 
 .exp-title { font-size: 12px; letter-spacing: 2px; color: #777; margin-bottom: 30px; }
@@ -124,6 +145,7 @@ body {
 
 @media (max-width: 992px) {
     .about-grid { grid-template-columns: 1fr; gap: 60px; }
-    .hero-title { font-size: 15vw; }
+    .hero-footer { flex-direction: column; align-items: flex-start; gap: 40px; }
+    .tools-wrapper { flex-wrap: wrap; }
     .name-label, .status-label { position: relative; display: inline-block; top: 0; left: 0; margin-top: 20px; transform: none !important; }
 }
