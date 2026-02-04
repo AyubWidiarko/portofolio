@@ -117,3 +117,70 @@ body {
     .exp-item { flex-direction: column; align-items: flex-start; gap: 8px; }
     .exp-content { text-align: left; }
 }
+
+/* WORK SECTION - RATA DENGAN ABOUT */
+.work-section { 
+    padding: 80px 0; 
+    border-top: 1px solid rgba(17, 17, 17, 0.1); 
+    margin-top: 20px;
+    width: 100%; /* Dia bakal ikut lebar container */
+}
+
+.work-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 32px; /* Gap standar biar gak terlalu lebar keluar */
+    margin-top: 40px; 
+}
+
+.work-card { 
+    background: white; 
+    border: 2px solid var(--black); 
+    box-shadow: 6px 6px 0 var(--black); 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.work-card:hover { 
+    transform: translate(-6px, -6px); 
+    box-shadow: 12px 12px 0 var(--black); 
+}
+
+.work-image-wrapper { 
+    aspect-ratio: 16 / 11; 
+    overflow: hidden; 
+    border-bottom: 2px solid var(--black); 
+}
+
+.work-image-wrapper img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.work-info { 
+    padding: 24px; 
+    text-align: left; 
+}
+
+.work-meta { 
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: 12px; 
+}
+
+.work-category { font-weight: 800; text-transform: uppercase; font-size: 11px; color: var(--orange); }
+.work-year { font-weight: 600; font-size: 11px; color: #888; }
+.work-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; text-transform: lowercase; }
+.work-desc { font-size: 15px; color: #666; line-height: 1.5; }
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+    .work-grid { 
+        grid-template-columns: 1fr; /* Jadi satu kolom biar gak sempit */
+        gap: 24px; 
+    }
+    .work-card:hover { transform: translateY(-4px); box-shadow: 10px 10px 0 var(--black); }
+}
