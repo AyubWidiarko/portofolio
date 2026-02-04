@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayub Widiarko | Visual Designer</title>
+    
     <link rel="icon" type="image/png" href="https://i.imghippo.com/files/OW9589b.png">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -44,12 +45,7 @@
                 <div class="scroll-down">↓</div>
             </div>
         </section>
-    </div> <section id="work" class="work-section">
-        <div class="work-card-dark">
-            </div>
-    </section>
 
-    <div class="container">
         <section id="about" class="about-section">
             <div class="about-grid">
                 <div class="about-left">
@@ -75,6 +71,13 @@
                                 <p>TechCorp Solution</p>
                             </div>
                         </div>
+                        <div class="exp-item">
+                            <span class="exp-year">2022 — 2024</span>
+                            <div class="exp-content">
+                                <h4>Visual Identity Designer</h4>
+                                <p>Creative Studio ID</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,11 +90,19 @@
         window.addEventListener('load', () => {
             gsap.registerPlugin(ScrollTrigger);
             const tl = gsap.timeline();
+            
+            // Set initial states to avoid flicker
             gsap.set(".box-badge", { opacity: 1, scale: 0 });
+
             tl.from(".nav", { y: -20, opacity: 0, duration: 0.8 })
               .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
               .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
               .from(".hero-sub, .scroll-down", { opacity: 0, y: 10, duration: 0.8 }, "-=0.4");
+
+            gsap.from(".about-grid", {
+                scrollTrigger: { trigger: ".about-section", start: "top 85%" },
+                y: 40, opacity: 0, duration: 1, ease: "power3.out"
+            });
         });
     </script>
 </body>
