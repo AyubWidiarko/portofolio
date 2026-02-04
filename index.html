@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayub Widiarko | Visual Designer</title>
-    
     <link rel="icon" type="image/png" href="https://i.imghippo.com/files/OW9589b.png">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -60,7 +59,7 @@
                     <h2 class="section-title">about<span class="dot-orange">.</span></h2>
                     <p class="about-text">
                         I help ERP & tech companies explain complex systems through clear and structured visuals.
-                        Focus on <strong>clarity</strong>, <strong>structure</strong>, and <strong>impact</strong>— not just aesthetics.
+                        Focus on <strong>clarity</strong>, <strong>structure</strong>, and <strong>impact</strong>.
                     </p>
                     <div class="tag-group">
                         <span class="tag">Brand Identity</span>
@@ -97,18 +96,31 @@
     <script>
         window.addEventListener('load', () => {
             gsap.registerPlugin(ScrollTrigger);
-            const tl = gsap.timeline();
             
-            gsap.set(".box-badge", { opacity: 1, scale: 0 });
+            // Timeline Utama
+            const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-            tl.from(".nav", { y: -20, opacity: 0, duration: 0.8 })
-              .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
-              .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
-              .from(".tools-wrapper, .scroll-down", { opacity: 0, y: 10, duration: 0.8 }, "-=0.4");
+            // Initial Hidden State (Fix Flicker)
+            gsap.set([".nav", ".hero-header", ".hero-title", ".box-badge", ".tools-wrapper", ".scroll-down"], { opacity: 0 });
+            gsap.set(".box-badge", { scale: 0 });
 
+            tl.to(".nav", { opacity: 1, y: 0, duration: 1 })
+              .to(".hero-header", { opacity: 1, y: 0 }, "-=0.7")
+              .to(".hero-title", { opacity: 1, y: 0, duration: 1.2 }, "-=0.8")
+              .to(".box-badge", { opacity: 1, scale: 1, stagger: 0.15, ease: "back.out(1.7)", duration: 0.8 }, "-=0.9")
+              .to(".tools-wrapper", { opacity: 1, y: 0, duration: 0.8 }, "-=0.6")
+              .to(".scroll-down", { opacity: 1, y: 0, duration: 0.8 }, "-=0.6");
+
+            // About Scroll Animation
             gsap.from(".about-grid", {
-                scrollTrigger: { trigger: ".about-section", start: "top 85%" },
-                y: 40, opacity: 0, duration: 1, ease: "power3.out"
+                scrollTrigger: {
+                    trigger: ".about-section",
+                    start: "top 85%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out"
             });
         });
     </script>
