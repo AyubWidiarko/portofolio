@@ -41,9 +41,22 @@
             </div>
 
             <div class="hero-footer">
-                <p class="hero-sub">I help ERP & tech companies explain complex systems through clear and structured visuals.</p>
+                <div class="footer-left">
+                    <p class="hero-sub">I help ERP & tech companies explain complex systems through clear and structured visuals.</p>
+                    <div class="tools-wrapper">
+                        <div class="tool-icon"><img src="https://cdn.worldvectorlogo.com/logos/figma-5.svg"></div>
+                        <div class="tool-icon"><img src="https://cdn.worldvectorlogo.com/logos/adobe-illustrator-cc-icon.svg"></div>
+                        <div class="tool-icon"><img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg"></div>
+                        <div class="tool-icon"><img src="https://cdn.worldvectorlogo.com/logos/after-effects-cc-1.svg"></div>
+                    </div>
+                </div>
                 <div class="scroll-down">↓</div>
             </div>
+        </section>
+
+        <section id="work" class="work-section">
+            <div class="work-card-dark">
+                </div>
         </section>
 
         <section id="about" class="about-section">
@@ -91,13 +104,12 @@
             gsap.registerPlugin(ScrollTrigger);
             const tl = gsap.timeline();
             
-            // Set initial states to avoid flicker
             gsap.set(".box-badge", { opacity: 1, scale: 0 });
 
             tl.from(".nav", { y: -20, opacity: 0, duration: 0.8 })
               .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
               .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
-              .from(".hero-sub, .scroll-down", { opacity: 0, y: 10, duration: 0.8 }, "-=0.4");
+              .from(".hero-sub, .scroll-down, .tool-icon", { opacity: 0, y: 10, duration: 0.8, stagger: 0.1 }, "-=0.4");
 
             gsap.from(".about-grid", {
                 scrollTrigger: { trigger: ".about-section", start: "top 85%" },
