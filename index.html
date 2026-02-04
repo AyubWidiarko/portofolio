@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayub Widiarko | Visual Designer</title>
-    
     <link rel="icon" type="image/png" href="https://i.imghippo.com/files/OW9589b.png">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -66,15 +65,12 @@
                     <h2 class="section-title">about<span class="dot-orange">.</span></h2>
                     <p class="about-text">
                         I help ERP & tech companies explain complex systems through clear and structured visuals.
-                        Focus on <strong>clarity</strong>, <strong>structure</strong>, and <strong>impact</strong>— not just aesthetics.
                     </p>
                     <div class="tag-group">
                         <span class="tag">Brand Identity</span>
                         <span class="tag">UI/UX Design</span>
-                        <span class="tag">Visual Strategy</span>
                     </div>
                 </div>
-
                 <div class="about-right">
                     <h3 class="exp-title">SELECTED EXPERIENCE</h3>
                     <div class="exp-list">
@@ -83,13 +79,6 @@
                             <div class="exp-content">
                                 <h4>Lead Visual Designer</h4>
                                 <p>TechCorp Solution</p>
-                            </div>
-                        </div>
-                        <div class="exp-item">
-                            <span class="exp-date">2022 — 2024</span>
-                            <div class="exp-content">
-                                <h4>Visual Identity Designer</h4>
-                                <p>Creative Studio ID</p>
                             </div>
                         </div>
                     </div>
@@ -103,7 +92,6 @@
         window.addEventListener('load', () => {
             const tl = gsap.timeline();
             gsap.set(".box-badge", { opacity: 0, scale: 0 });
-
             tl.from(".nav", { y: -20, opacity: 0, duration: 0.6 })
               .from(".hero-title", { y: 40, opacity: 0, duration: 0.8, ease: "power4.out" }, "-=0.2")
               .to(".box-badge", { opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.7)" }, "-=0.4")
