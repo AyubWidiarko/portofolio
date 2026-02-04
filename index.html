@@ -44,11 +44,11 @@
                 <div class="tools-container">
                     <span class="tools-label">Tools I use:</span>
                     <div class="tools-wrapper">
-                        <div class="tool-item">Figma</div>
-                        <div class="tool-item">Ai</div>
-                        <div class="tool-item">Ps</div>
-                        <div class="tool-item">Ae</div>
-                        <div class="tool-item">Pr</div>
+                        <div class="tool-item figma">Figma</div>
+                        <div class="tool-item ai">Ai</div>
+                        <div class="tool-item ps">Ps</div>
+                        <div class="tool-item ae">Ae</div>
+                        <div class="tool-item pr">Pr</div>
                     </div>
                 </div>
                 <div class="scroll-down">↓</div>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="exp-item">
-                            <span class="exp-year">2022 — 2024</span>
+                            <span class="exp-date">2022 — 2024</span>
                             <div class="exp-content">
                                 <h4>Visual Identity Designer</h4>
                                 <p>Creative Studio ID</p>
@@ -105,7 +105,7 @@
             tl.from(".nav", { y: -20, opacity: 0, duration: 0.8 })
               .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
               .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
-              .from(".tools-container, .scroll-down", { opacity: 0, y: 15, duration: 0.8, stagger: 0.2 }, "-=0.4");
+              .from(".tools-container, .scroll-down", { opacity: 0, y: 15, duration: 0.8, stagger: 0.1 }, "-=0.4");
 
             gsap.from(".about-grid", {
                 scrollTrigger: { trigger: ".about-section", start: "top 85%" },
