@@ -123,13 +123,13 @@ body {
     padding: 80px 0; 
     border-top: 1px solid rgba(17, 17, 17, 0.1); 
     margin-top: 20px;
-    width: 100%; /* Dia bakal ikut lebar container */
+    width: 100%;
 }
 
 .work-grid { 
     display: grid; 
     grid-template-columns: repeat(2, 1fr); 
-    gap: 32px; /* Gap standar biar gak terlalu lebar keluar */
+    gap: 32px; 
     margin-top: 40px; 
 }
 
@@ -141,6 +141,8 @@ body {
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* KUNCI BIAR GAMBAR GAK BOCOR */
+    width: 100%;
 }
 
 .work-card:hover { 
@@ -149,15 +151,18 @@ body {
 }
 
 .work-image-wrapper { 
+    width: 100%; /* Paksa width ikut card */
     aspect-ratio: 16 / 11; 
     overflow: hidden; 
     border-bottom: 2px solid var(--black); 
+    position: relative; /* Jaga konteks visual */
 }
 
 .work-image-wrapper img { 
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
+    display: block; /* Buang whitespace di bawah gambar */
 }
 
 .work-info { 
@@ -176,11 +181,25 @@ body {
 .work-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; text-transform: lowercase; }
 .work-desc { font-size: 15px; color: #666; line-height: 1.5; }
 
-/* MOBILE FIX */
+/* MOBILE FIX - ANTI BOCOR */
 @media (max-width: 768px) {
     .work-grid { 
-        grid-template-columns: 1fr; /* Jadi satu kolom biar gak sempit */
-        gap: 24px; 
+        grid-template-columns: 1fr; 
+        gap: 32px; 
+        width: 100%;
     }
-    .work-card:hover { transform: translateY(-4px); box-shadow: 10px 10px 0 var(--black); }
+    
+    .work-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .work-image-wrapper {
+        aspect-ratio: 4 / 3; /* Sedikit lebih kotak di mobile biar enak dilihat */
+    }
+
+    .work-card:hover { 
+        transform: translateY(-4px); 
+        box-shadow: 10px 10px 0 var(--black); 
+    }
 }
