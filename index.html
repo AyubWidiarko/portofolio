@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ayub Widiarko | Visual Designer</title>
     
     <link rel="icon" type="image/png" href="https://i.imghippo.com/files/OW9589b.png">
@@ -22,10 +22,10 @@
                     <span class="nav-role">Visual Designer</span>
                 </div>
             </div>
-            <div class="nav-right">
+            <div class="nav-right mobile-hide">
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#about" class="nav-link">About</a>
-                <a href="mailto:ayub@widiarko.com" class="btn-orange">Work with me</a>
+                <a href="mailto:ayub@widiarko.com" class="btn-orange">Work</a>
             </div>
         </nav>
 
@@ -36,27 +36,29 @@
 
             <div class="main-title-container">
                 <h1 class="hero-title">portfolio</h1>
-                <div class="box-badge name-label">ayub widiarko</div>
-                <div class="box-badge status-label">available ✨</div>
+                <div class="badge-stack-mobile">
+                    <div class="box-badge name-label">ayub widiarko</div>
+                    <div class="box-badge status-label">available ✨</div>
+                </div>
             </div>
 
             <div class="hero-footer">
                 <div class="tools-container">
                     <span class="tools-label">Tools I use:</span>
                     <div class="tools-wrapper">
-                        <div class="tool-icon-box">
+                        <div class="tool-icon-box" title="Figma">
                             <img src="https://cdn.worldvectorlogo.com/logos/figma-5.svg" alt="Figma" class="tool-img">
                         </div>
-                        <div class="tool-icon-box">
+                        <div class="tool-icon-box" title="Illustrator">
                             <img src="https://cdn.worldvectorlogo.com/logos/adobe-illustrator-cc-icon.svg" alt="Ai" class="tool-img">
                         </div>
-                        <div class="tool-icon-box">
+                        <div class="tool-icon-box" title="Photoshop">
                             <img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" alt="Ps" class="tool-img">
                         </div>
-                        <div class="tool-icon-box">
+                        <div class="tool-icon-box" title="After Effects">
                             <img src="https://cdn.worldvectorlogo.com/logos/after-effects-cc-1.svg" alt="Ae" class="tool-img">
                         </div>
-                        <div class="tool-icon-box">
+                        <div class="tool-icon-box" title="Premiere Pro">
                             <img src="https://cdn.worldvectorlogo.com/logos/adobe-premiere-pro-cc-icon.svg" alt="Pr" class="tool-img">
                         </div>
                     </div>
@@ -71,17 +73,15 @@
                     <h2 class="section-title">about<span class="dot-orange">.</span></h2>
                     <p class="about-text">
                         I help ERP & tech companies explain complex systems through clear and structured visuals.
-                        Focus on <strong>clarity</strong>, <strong>structure</strong>, and <strong>impact</strong>— not just aesthetics.
                     </p>
                     <div class="tag-group">
                         <span class="tag">Brand Identity</span>
                         <span class="tag">UI/UX Design</span>
-                        <span class="tag">Visual Strategy</span>
                     </div>
                 </div>
 
                 <div class="about-right">
-                    <h3 class="exp-title">SELECTED EXPERIENCE</h3>
+                    <h3 class="exp-title">EXPERIENCE</h3>
                     <div class="exp-list">
                         <div class="exp-item">
                             <span class="exp-date">2024 — Pres.</span>
@@ -110,26 +110,13 @@
             gsap.registerPlugin(ScrollTrigger);
             const tl = gsap.timeline();
             
-            gsap.set(".box-badge", { opacity: 1, scale: 0 });
+            gsap.set(".box-badge", { opacity: 0, scale: 0 });
 
-            tl.from(".nav", { y: -20, opacity: 0, duration: 0.8 })
-              .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
-              .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
-              .from(".tools-label", { opacity: 0, x: -10, duration: 0.5 }, "-=0.2")
-              .from(".tool-icon-box", { 
-                  opacity: 0, 
-                  y: 20, 
-                  scale: 0.5, 
-                  stagger: 0.1, 
-                  duration: 0.6, 
-                  ease: "back.out(1.5)" 
-              }, "-=0.4")
-              .from(".scroll-down", { opacity: 0, y: 10, duration: 0.5 }, "-=0.3");
-
-            gsap.from(".about-grid", {
-                scrollTrigger: { trigger: ".about-section", start: "top 85%" },
-                y: 40, opacity: 0, duration: 1, ease: "power3.out"
-            });
+            tl.from(".nav", { y: -20, opacity: 0, duration: 0.6 })
+              .from(".hero-title", { y: 40, opacity: 0, duration: 0.8, ease: "power4.out" }, "-=0.2")
+              .to(".box-badge", { opacity: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: "back.out(1.7)" }, "-=0.4")
+              .from(".tools-container", { opacity: 0, y: 10, duration: 0.5 }, "-=0.2")
+              .from(".tool-icon-box", { opacity: 0, scale: 0.5, stagger: 0.05, duration: 0.4 }, "-=0.3");
         });
     </script>
 </body>
