@@ -4,12 +4,6 @@
     --orange: #ff5c28;
     --blue: #4569fb;
     --yellow: #ffde59;
-    /* Brand Colors for Hover */
-    --figma: #F24E1E;
-    --ai: #FF9A00;
-    --ps: #31A8FF;
-    --ae: #D67FFF;
-    --pr: #E78EFF;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -83,25 +77,28 @@ body {
 
 .box-badge:hover { transform: scale(1.1) translateY(-10px) rotate(0deg); box-shadow: 10px 10px 0 var(--black); }
 
-/* HERO FOOTER - TOOLS RATA SAMPING */
+/* TOOLS SECTION - ICON VERSION */
 .hero-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 60px; }
-.tools-container { display: flex; flex-direction: column; gap: 12px; }
+.tools-container { display: flex; flex-direction: column; gap: 15px; }
 .tools-label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #999; }
-.tools-wrapper { display: flex; gap: 12px; align-items: center; }
+.tools-wrapper { display: flex; gap: 15px; align-items: center; }
 
-.tool-item {
-    padding: 8px 18px; background: white; border: 2.5px solid var(--black);
-    font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 var(--black);
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
+.tool-icon-box {
+    width: 54px; height: 54px; background: white; border: 2.5px solid var(--black);
+    display: flex; justify-content: center; align-items: center; padding: 10px;
+    box-shadow: 4px 4px 0 var(--black); transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
 }
 
-/* HOVER COLORS */
-.tool-item:hover { transform: translateY(-8px) rotate(-3deg); box-shadow: 6px 6px 0 var(--black); color: white; }
-.figma:hover { background: var(--figma) !important; }
-.ai:hover { background: var(--ai) !important; }
-.ps:hover { background: var(--ps) !important; }
-.ae:hover { background: var(--ae) !important; }
-.pr:hover { background: var(--pr) !important; }
+.tool-img {
+    width: 100%; height: 100%; object-fit: contain;
+    filter: grayscale(100%) opacity(0.6); /* Default: Pudar & Hitam Putih */
+    transition: 0.3s ease;
+}
+
+/* HOVER EFFECTS */
+.tool-icon-box:hover { transform: translateY(-8px) rotate(-3deg); box-shadow: 7px 7px 0 var(--black); }
+.tool-icon-box:hover .tool-img { filter: grayscale(0%) opacity(1); } /* Warna Asli Nongol */
 
 .scroll-down { font-size: 40px; color: var(--orange); font-weight: bold; animation: bounce 2s infinite; }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
