@@ -4,6 +4,13 @@
     --orange: #ff5c28;
     --blue: #4569fb;
     --yellow: #ffde59;
+    
+    /* Brand Colors */
+    --figma: #f24e1e;
+    --ai: #ff9a00;
+    --ps: #31a8ff;
+    --ae: #d67fff;
+    --pr: #e78eff;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,7 +35,7 @@ body {
 .logo-wrapper {
     width: 44px; height: 44px; flex-shrink: 0;
     border: 2px solid var(--black); background: var(--black);
-    border-radius: 10px; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 10px; overflow: hidden; transition: 0.4s;
 }
 .logo-wrapper:hover { transform: rotate(-10deg) scale(1.1); }
 .main-logo { width: 100%; height: 100%; object-fit: cover; }
@@ -56,76 +63,62 @@ body {
 }
 
 .main-title-container {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    padding: 80px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 5;
+    position: relative; width: 100%; margin: 0 auto; padding: 80px 0;
+    display: flex; justify-content: center; align-items: center; z-index: 5;
 }
 
 .hero-title {
-    font-size: clamp(80px, 18vw, 220px);
-    font-weight: 800;
-    text-transform: lowercase;
-    line-height: 0.8;
-    letter-spacing: -0.02em;
-    position: relative;
-    z-index: 1;
+    font-size: clamp(80px, 18vw, 220px); font-weight: 800;
+    text-transform: lowercase; line-height: 0.8; letter-spacing: -0.02em;
+    position: relative; z-index: 1;
 }
 
 .box-badge {
-    position: absolute;
-    background: white !important;
-    border: 3px solid var(--black);
-    padding: 10px 22px;
-    font-weight: 800;
-    box-shadow: 6px 6px 0 var(--black);
-    z-index: 99;
-    white-space: nowrap;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: absolute; background: white !important; border: 3px solid var(--black);
+    padding: 10px 22px; font-weight: 800; box-shadow: 6px 6px 0 var(--black);
+    z-index: 99; white-space: nowrap; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .name-label { left: 0%; top: 20%; transform: rotate(-5deg); }
-.status-label { 
-    right: 0%; bottom: 20%; background: var(--blue) !important; color: white !important; 
-    border-radius: 50px; transform: rotate(3deg);
-}
+.status-label { right: 0%; bottom: 20%; background: var(--blue) !important; color: white !important; border-radius: 50px; transform: rotate(3deg); }
 
 .box-badge:hover { transform: scale(1.1) translateY(-10px) rotate(0deg); box-shadow: 10px 10px 0 var(--black); }
 
-/* HERO FOOTER TOOLS REVISION */
+/* HERO FOOTER TOOLS - RATA KESAMPING */
 .hero-footer { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-top: 60px; 
+    display: flex; justify-content: space-between; align-items: center; margin-top: 60px; 
 }
 
-.tools-container { display: flex; flex-direction: column; gap: 10px; }
-.tools-label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #888; }
-.tools-wrapper { display: flex; gap: 10px; }
+.tools-container { display: flex; flex-direction: column; gap: 12px; }
+.tools-label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #999; }
+.tools-wrapper { display: flex; gap: 12px; align-items: center; }
 
 .tool-item {
-    padding: 8px 16px;
+    padding: 8px 18px;
     background: white;
     border: 2.5px solid var(--black);
     font-weight: 800;
     font-size: 14px;
     box-shadow: 3px 3px 0 var(--black);
     transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
 }
 
-.tool-item:hover {
-    transform: translateY(-5px);
+/* ANIMASI HOVER KE WARNA ASLI */
+.tool-item:hover { 
+    transform: translateY(-8px) rotate(-3deg); 
     box-shadow: 6px 6px 0 var(--black);
-    background: var(--yellow);
-    cursor: default;
+    color: white;
 }
 
-.scroll-down { font-size: 40px; color: var(--orange); font-weight: bold; }
+.tool-item.figma:hover { background: var(--figma); border-color: var(--black); }
+.tool-item.ai:hover { background: var(--ai); border-color: var(--black); }
+.tool-item.ps:hover { background: var(--ps); border-color: var(--black); }
+.tool-item.ae:hover { background: var(--ae); border-color: var(--black); }
+.tool-item.pr:hover { background: var(--pr); border-color: var(--black); }
+
+.scroll-down { font-size: 40px; color: var(--orange); font-weight: bold; animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 /* ABOUT SECTION */
 .about-section { padding: 100px 0; border-top: 2px solid var(--black); margin-top: 60px; }
@@ -147,5 +140,4 @@ body {
     .about-grid { grid-template-columns: 1fr; gap: 60px; }
     .hero-footer { flex-direction: column; align-items: flex-start; gap: 40px; }
     .tools-wrapper { flex-wrap: wrap; }
-    .name-label, .status-label { position: relative; display: inline-block; top: 0; left: 0; margin-top: 20px; transform: none !important; }
 }
