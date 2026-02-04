@@ -4,7 +4,6 @@
     --orange: #ff5c28;
     --blue: #4569fb;
     --yellow: #ffde59;
-    --dark-section: #051622; /* Warna box gelap di SS lo */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,95 +18,73 @@ body {
     overflow-x: hidden;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-/* NAV */
+/* NAV - ASLI */
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; }
-.nav-left { display: flex; align-items: center; gap: 12px; }
-.logo-wrapper { width: 44px; height: 44px; border: 2.5px solid var(--black); background: var(--black); border-radius: 10px; overflow: hidden; flex-shrink: 0; }
-.main-logo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nav-left { display: flex; align-items: center; gap: 15px; }
+.logo-wrapper { width: 44px; height: 44px; border: 2.5px solid var(--black); background: var(--black); border-radius: 10px; overflow: hidden; }
+.main-logo { width: 100%; height: 100%; object-fit: cover; }
 .nav-name { font-size: 16px; font-weight: 800; }
 .nav-role { font-size: 11px; color: #777; }
-.nav-right { display: flex; gap: 20px; align-items: center; }
+.nav-right { display: flex; gap: 25px; align-items: center; }
 .nav-link { text-decoration: none; color: var(--black); font-weight: 600; font-size: 14px; }
-.btn-orange { background: var(--orange); color: white!important; padding: 10px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 4px 4px 0 var(--black); transition: 0.3s; font-size: 13px; }
+.btn-orange { background: var(--orange); color: white!important; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 4px 4px 0 var(--black); transition: 0.3s; }
 
-/* HERO - Kunci layout biar gak nabrak */
+/* HERO - FIX JALUR PANAH MERAH */
 .hero { 
-    min-height: 90vh; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between; 
-    padding-bottom: 60px; /* Jarak aman sebelum section gelap */
+    padding: 20px 0 100px 0; /* GUE TAMBAHIN PADDING BAWAH 100px BIAR GAK NABRAK */
+    position: relative; 
 }
-
 .hero-header { display: flex; justify-content: flex-end; }
-.badge-year { background: var(--yellow); border: 2.5px solid var(--black); padding: 5px 12px; font-weight: 800; transform: rotate(5deg); box-shadow: 3px 3px 0 var(--black); }
+.badge-year { background: var(--yellow); border: 2.5px solid var(--black); padding: 5px 15px; font-weight: 800; transform: rotate(5deg); box-shadow: 3px 3px 0 var(--black); }
 
 .main-title-container { position: relative; padding: 100px 0; text-align: center; }
-.hero-title { font-size: clamp(60px, 16vw, 200px); font-weight: 800; line-height: 0.8; letter-spacing: -0.05em; }
+.hero-title { font-size: clamp(80px, 18vw, 200px); font-weight: 800; text-transform: lowercase; line-height: 0.8; letter-spacing: -0.03em; }
 
-/* BADGES */
-.box-badge { position: absolute; background: white; border: 2.5px solid var(--black); padding: 8px 16px; font-weight: 800; font-size: 14px; box-shadow: 4px 4px 0 var(--black); z-index: 5; }
-.name-label { left: 5%; top: 20%; transform: rotate(-5deg); }
-.status-label { right: 5%; bottom: 25%; background: var(--blue)!important; color: white!important; border-radius: 50px; transform: rotate(3deg); }
+/* BADGES - ASLI */
+.box-badge { position: absolute; background: white; border: 2.5px solid var(--black); padding: 8px 18px; font-weight: 800; font-size: 14px; box-shadow: 5px 5px 0 var(--black); z-index: 10; white-space: nowrap; }
+.name-label { left: 0%; top: 20%; transform: rotate(-5deg); }
+.status-label { right: 0%; bottom: 25%; background: var(--blue)!important; color: white!important; border-radius: 50px; transform: rotate(3deg); }
 
-/* TOOLS FOOTER */
-.hero-footer { display: flex; justify-content: space-between; align-items: flex-end; width: 100%; }
-.tools-container { display: flex; flex-direction: column; gap: 10px; }
-.tools-label { font-size: 11px; font-weight: 800; color: #aaa; text-transform: uppercase; }
+/* TOOLS - ASLI */
+.hero-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 40px; }
+.tools-container { display: flex; flex-direction: column; gap: 12px; }
+.tools-label { font-size: 12px; font-weight: 800; color: #aaa; text-transform: uppercase; letter-spacing: 1px; }
 .tools-wrapper { display: flex; gap: 10px; }
+.tool-icon-box { width: 44px; height: 44px; background: white; border: 2px solid var(--black); display: flex; justify-content: center; align-items: center; padding: 8px; box-shadow: 3px 3px 0 var(--black); }
+.tool-img { width: 100%; height: 100%; object-fit: contain; }
 
-.tool-icon-box { 
-    width: 44px; height: 44px; background: white; 
-    border: 2px solid var(--black); display: flex; 
-    justify-content: center; align-items: center; 
-    box-shadow: 3px 3px 0 var(--black); flex-shrink: 0;
-}
-.tool-img { max-width: 24px; max-height: 24px; object-fit: contain; }
-
-/* WORK SECTION - Perbaikan Area Panah Merah */
-.work-section { 
-    width: 100%; 
-    background: transparent; 
-    margin-top: 20px;
-}
-
-.work-card-dark {
+/* WORK SECTION - FIX AREA GELAP */
+.work-box-dark {
     width: 100%;
     min-height: 600px;
-    background: var(--dark-section);
-    border-radius: 60px 60px 0 0; /* Lengkungan atas yang rapi */
-    border: 2.5px solid var(--black);
+    background: #051622; /* Warna box gelap lo */
+    border-radius: 80px 80px 0 0;
+    border: 2px solid var(--black);
     border-bottom: none;
-    padding: 60px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
-/* ABOUT */
-.about-section { padding: 80px 0; background: var(--bg); border-top: 2.5px solid var(--black); }
-.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; }
-.section-title { font-size: clamp(40px, 8vw, 60px); font-weight: 800; margin-bottom: 20px; }
-.about-text { font-size: clamp(18px, 3vw, 24px); line-height: 1.6; margin-bottom: 30px; }
-.tag { padding: 6px 14px; border: 2px solid var(--black); background: white; font-weight: 700; box-shadow: 3px 3px 0 var(--black); margin-right: 8px; }
+/* ABOUT & LAINNYA - ASLI */
+.about-section { padding: 100px 0; border-top: 2px solid var(--black); margin-top: 0; }
+.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; }
+.section-title { font-size: 60px; font-weight: 800; margin-bottom: 25px; }
+.about-text { font-size: 24px; line-height: 1.6; margin-bottom: 40px; }
+.tag { padding: 8px 18px; border: 2px solid var(--black); background: white; font-weight: 700; box-shadow: 4px 4px 0 var(--black); display: inline-block; margin-right: 10px; }
 
-/* MOBILE REPAIR */
+/* MOBILE REPAIR (CUMA BENERIN POSISI BIAR GAK NABRAK) */
 @media (max-width: 768px) {
-    .nav-right { display: none; }
-    .hero { min-height: auto; padding-bottom: 40px; }
-    .hero-title { font-size: 70px; }
-    
-    /* Matikan absolute badge di mobile biar gak berantakan */
+    .container { padding: 0 20px; }
+    .hero-title { font-size: 80px; }
+    .hero { padding-bottom: 50px; }
     .box-badge { position: relative; left: auto!important; top: auto!important; bottom: auto!important; right: auto!important; display: inline-block; margin: 10px 5px 0; transform: none!important; }
-    
-    .hero-footer { flex-direction: column; align-items: center; gap: 30px; }
-    .tools-wrapper { justify-content: center; flex-wrap: wrap; }
-    
-    .work-card-dark { border-radius: 40px 40px 0 0; min-height: 400px; padding: 40px 20px; }
+    .hero-footer { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
+    .tools-wrapper { justify-content: center; }
+    .work-box-dark { border-radius: 40px 40px 0 0; }
     .about-grid { grid-template-columns: 1fr; }
 }
 
-@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-.scroll-down { font-size: 28px; color: var(--orange); animation: bounce 2s infinite; }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.scroll-down { font-size: 32px; color: var(--orange); font-weight: bold; animation: bounce 2s infinite; }
