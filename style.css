@@ -1,37 +1,41 @@
-/* --- KODE ASLI LO (TETEPIN AJA) --- */
-:root { --bg: #f8f8f8; --black: #111111; --orange: #ff5c28; --blue: #4569fb; --yellow: #ffde59; }
+:root {
+    --bg: #f8f8f8;
+    --black: #111111;
+    --orange: #ff5c28;
+    --blue: #4569fb;
+    --yellow: #ffde59;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { background-color: var(--bg); font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+body { background-color: var(--bg); font-family: 'Plus Jakarta Sans', sans-serif; color: var(--black); overflow-x: hidden; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
-/* NAV & HERO (LOCKED) */
+/* NAVBAR & HERO (LOCKED) */
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; }
-.hero { padding: 80px 0; position: relative; min-height: 80vh; }
+.hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: space-between; padding: 40px 0; position: relative; }
 .hero-title { font-size: clamp(80px, 18vw, 220px); font-weight: 800; text-transform: lowercase; line-height: 0.8; }
 .box-badge { position: absolute; background: white!important; border: 3px solid var(--black); padding: 10px 22px; font-weight: 800; box-shadow: 6px 6px 0 var(--black); z-index: 10; }
 .name-label { left: 0%; top: 20%; transform: rotate(-5deg); }
 .status-label { right: 0%; bottom: 20%; background: var(--blue)!important; color: white!important; border-radius: 50px; transform: rotate(3deg); }
 
-/* FIX AREA BOCOR */
-.work-section {
-    width: 100%;
-    margin-top: 100px; /* Jarak aman biar box gelap gak naik ke hero */
-    position: relative;
-    z-index: 20;
-}
-.work-card-dark {
-    width: 100%;
-    min-height: 600px;
-    background: #051622;
-    border-radius: 80px 80px 0 0;
-    border: 2px solid var(--black);
-}
+/* TOOLS SECTION STYLE */
+.tools-section { display: flex; align-items: center; gap: 15px; margin-top: 25px; }
+.tools-text { font-weight: 800; font-size: 14px; text-transform: lowercase; }
+.tools-list { display: flex; gap: 12px; }
+.tool-item { width: 32px; height: 32px; filter: grayscale(100%); transition: 0.3s ease; cursor: pointer; }
+.tool-item img { width: 100%; height: 100%; object-fit: contain; }
+.tool-item:hover { filter: grayscale(0%); transform: scale(1.1); }
 
-/* FIX MOBILE SIMPLE */
+/* WORK SECTION FIX (GAK BOCOR) */
+.work-section { width: 100%; position: relative; z-index: 20; background: var(--bg); margin-top: 60px; }
+.work-card-dark { width: 100%; min-height: 600px; background: #051622; border-radius: 80px 80px 0 0; border: 2.5px solid var(--black); border-bottom: none; }
+
+/* MOBILE SIMPLE FIX */
 @media (max-width: 768px) {
     .container { padding: 0 20px; }
-    .hero-title { font-size: 80px; }
-    /* Badge jadi relative biar gak berantakan di HP */
-    .box-badge { position: relative; left: auto; right: auto; top: auto; bottom: auto; transform: none !important; display: inline-block; margin: 10px 5px; }
-    .main-title-container { flex-direction: column; padding: 40px 0; text-align: center; }
+    .main-title-container { flex-direction: column; padding: 40px 0; gap: 15px; }
+    .hero-title { font-size: 70px; }
+    .box-badge { position: relative; left: auto; right: auto; top: auto; bottom: auto; transform: none!important; display: inline-block; margin: 5px 0; }
+    .hero-footer { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
+    .tools-section { flex-direction: column; gap: 10px; }
 }
