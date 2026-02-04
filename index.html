@@ -32,13 +32,27 @@
             <div class="hero-header">
                 <div class="badge-year">2026</div>
             </div>
+
             <div class="main-title-container">
                 <h1 class="hero-title">portfolio</h1>
                 <div class="box-badge name-label">ayub widiarko</div>
                 <div class="box-badge status-label">#opentowork ✨</div>
             </div>
+
             <div class="hero-footer">
-                <p class="hero-sub">I help ERP & tech companies explain complex systems through clear and structured visuals.</p>
+                <div class="footer-left">
+                    <p class="hero-sub">I help ERP & tech companies explain complex systems through clear and structured visuals.</p>
+                    
+                    <div class="tools-section">
+                        <span class="tools-text">tools:</span>
+                        <div class="tools-list">
+                            <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/figma-5.svg" alt="Figma"></div>
+                            <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/adobe-illustrator-cc-icon.svg" alt="AI"></div>
+                            <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/adobe-photoshop-2.svg" alt="PS"></div>
+                            <div class="tool-item"><img src="https://cdn.worldvectorlogo.com/logos/after-effects-cc-1.svg" alt="AE"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="scroll-down">↓</div>
             </div>
         </section>
@@ -52,7 +66,7 @@
             <div class="about-grid">
                 <div class="about-left">
                     <h2 class="section-title">about<span class="dot-orange">.</span></h2>
-                    <p class="about-text">I help ERP & tech companies explain complex systems through clear and structured visuals.</p>
+                    <p class="about-text">Focus on <strong>clarity</strong>, <strong>structure</strong>, and <strong>impact</strong>.</p>
                 </div>
             </div>
         </section>
@@ -65,10 +79,11 @@
             gsap.registerPlugin(ScrollTrigger);
             const tl = gsap.timeline();
             gsap.set(".box-badge", { opacity: 1, scale: 0 });
+
             tl.from(".nav", { y: -20, opacity: 0, duration: 0.8 })
               .from(".hero-title", { y: 60, opacity: 0, duration: 1, ease: "power4.out" }, "-=0.4")
               .to(".box-badge", { scale: 1, duration: 0.6, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.6")
-              .from(".hero-sub, .scroll-down", { opacity: 0, y: 10, duration: 0.8 }, "-=0.4");
+              .from(".hero-sub, .scroll-down, .tool-item", { opacity: 0, y: 10, duration: 0.8, stagger: 0.1 }, "-=0.4");
         });
     </script>
 </body>
