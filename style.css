@@ -22,58 +22,45 @@ body {
 .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
 /* NAVBAR (LOCKED) */
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; position: relative; z-index: 100; }
-.nav-left { display: flex; align-items: center; gap: 15px; }
-.logo-wrapper { width: 44px; height: 44px; flex-shrink: 0; border: 2px solid var(--black); background: var(--black); border-radius: 10px; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.logo-wrapper:hover { transform: rotate(-10deg) scale(1.1); }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; }
+.logo-wrapper { width: 44px; height: 44px; border: 2px solid var(--black); background: var(--black); border-radius: 10px; overflow: hidden; }
 .main-logo { width: 100%; height: 100%; object-fit: cover; }
-.nav-name { font-size: 16px; font-weight: 800; white-space: nowrap; }
-.nav-role { font-size: 12px; color: #777; }
-.nav-right { display: flex; gap: 30px; align-items: center; }
-.nav-link { text-decoration: none; color: var(--black); font-weight: 600; font-size: 14px; transition: 0.3s; position: relative; }
-.btn-orange { background: var(--orange); color: white !important; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 4px 4px 0 var(--black); transition: 0.3s; }
+.btn-orange { background: var(--orange); color: white!important; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 4px 4px 0 var(--black); }
 
-/* HERO (FIXED HEIGHT) */
-.hero { 
-    min-height: 100vh; /* KUNCI BIAR GAK NYERUDUK */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 40px 0 80px 0; 
-    position: relative; 
-}
-.hero-header { display: flex; justify-content: flex-end; }
-.badge-year { background: var(--yellow); border: 2px solid var(--black); padding: 6px 16px; font-weight: 800; transform: rotate(5deg); box-shadow: 4px 4px 0 var(--black); }
-
-.main-title-container { position: relative; width: 100%; padding: 60px 0; display: flex; justify-content: center; align-items: center; z-index: 5; }
-.hero-title { font-size: clamp(80px, 18vw, 220px); font-weight: 800; text-transform: lowercase; line-height: 0.8; letter-spacing: -0.02em; position: relative; z-index: 1; }
+/* HERO (LOCKED + FIX BOCOR) */
+.hero { min-height: 90vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 0; position: relative; }
+.main-title-container { position: relative; width: 100%; text-align: center; padding: 100px 0; }
+.hero-title { font-size: clamp(80px, 16vw, 200px); font-weight: 800; text-transform: lowercase; line-height: 0.8; letter-spacing: -0.02em; }
 
 /* BADGES (LOCKED) */
-.box-badge { position: absolute; background: white !important; border: 3px solid var(--black); padding: 10px 22px; font-weight: 800; box-shadow: 6px 6px 0 var(--black); z-index: 99; white-space: nowrap; transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-.name-label { left: 0%; top: 20%; transform: rotate(-5deg); }
-.status-label { right: 0%; bottom: 20%; background: var(--blue) !important; color: white !important; border-radius: 50px; transform: rotate(3deg); }
+.box-badge { position: absolute; background: white; border: 3px solid var(--black); padding: 10px 20px; font-weight: 800; box-shadow: 5px 5px 0 var(--black); z-index: 10; white-space: nowrap; }
+.name-label { left: 0; top: 15%; transform: rotate(-5deg); }
+.status-label { right: 0; bottom: 15%; background: var(--blue)!important; color: white!important; border-radius: 50px; transform: rotate(3deg); }
 
-/* FOOTER & TOOLS (MODIF) */
-.hero-footer { display: flex; justify-content: space-between; align-items: flex-end; }
-.footer-left { display: flex; flex-direction: column; gap: 20px; }
-.hero-sub { max-width: 500px; font-size: 18px; font-weight: 500; line-height: 1.5; color: #444; }
-.tools-wrapper { display: flex; gap: 10px; }
-.tool-icon { width: 44px; height: 44px; background: white; border: 2px solid var(--black); display: flex; justify-content: center; align-items: center; padding: 8px; box-shadow: 3px 3px 0 var(--black); }
-.tool-icon img { width: 100%; height: 100%; object-fit: contain; }
-.scroll-down { font-size: 40px; color: var(--orange); font-weight: bold; }
+/* FOOTER & TOOLS (FIX) */
+.hero-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: auto; }
+.tools-wrapper { display: flex; gap: 10px; margin-top: 15px; }
+.tool-box { width: 40px; height: 40px; background: white; border: 2px solid var(--black); display: flex; justify-content: center; align-items: center; padding: 7px; box-shadow: 3px 3px 0 var(--black); }
+.tool-box img { width: 100%; height: 100%; object-fit: contain; }
 
-/* PROJECT SECTION (GELAP) */
-.work-section { width: 100%; position: relative; z-index: 10; margin-top: 20px; }
-.work-card-dark { width: 100%; min-height: 700px; background: #051622; border-radius: 80px 80px 0 0; border: 2.5px solid var(--black); }
+/* WORK SECTION (PANAH MERAH FIX) */
+.work-section { width: 100%; position: relative; z-index: 20; margin-top: 40px; }
+.work-card-dark { width: 100%; min-height: 600px; background: #051622; border-radius: 80px 80px 0 0; border-top: 2px solid var(--black); }
 
-/* ABOUT SECTION (LOCKED) */
-.about-section { padding: 100px 0; border-top: 2px solid var(--black); margin-top: 60px; background: var(--bg); position: relative; z-index: 11; }
-.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 80px; align-items: start; }
-.section-title { font-size: 60px; font-weight: 800; margin-bottom: 25px; }
-.about-text { font-size: 24px; line-height: 1.6; margin-bottom: 40px; color: #333; }
-.tag { padding: 8px 18px; border: 2px solid var(--black); background: white; font-weight: 700; box-shadow: 4px 4px 0 var(--black); }
+/* ABOUT (LOCKED) */
+.about-section { padding: 100px 0; }
+.about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; }
 
-@media (max-width: 992px) {
-    .hero-footer { flex-direction: column; align-items: flex-start; gap: 30px; }
-    .name-label, .status-label { position: relative; display: inline-block; top: 0; left: 0; margin-top: 20px; transform: none !important; }
+/* MOBILE SIMPLE FIX */
+@media (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .hero { min-height: auto; padding: 40px 0; }
+    .main-title-container { padding: 60px 0; }
+    .hero-title { font-size: 70px; }
+    
+    /* Simpel: Badge gak melayang di mobile */
+    .box-badge { position: relative; left: auto; right: auto; top: auto; bottom: auto; display: inline-block; margin: 10px 5px; transform: none!important; }
+    
+    .hero-footer { flex-direction: column; align-items: center; text-align: center; gap: 30px; }
+    .about-grid { grid-template-columns: 1fr; }
 }
