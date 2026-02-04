@@ -4,13 +4,12 @@
     --orange: #ff5c28;
     --blue: #4569fb;
     --yellow: #ffde59;
-    
-    /* Brand Colors */
-    --figma: #f24e1e;
-    --ai: #ff9a00;
-    --ps: #31a8ff;
-    --ae: #d67fff;
-    --pr: #e78eff;
+    /* Brand Colors for Hover */
+    --figma: #F24E1E;
+    --ai: #FF9A00;
+    --ps: #31A8FF;
+    --ae: #D67FFF;
+    --pr: #E78EFF;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -84,38 +83,25 @@ body {
 
 .box-badge:hover { transform: scale(1.1) translateY(-10px) rotate(0deg); box-shadow: 10px 10px 0 var(--black); }
 
-/* HERO FOOTER TOOLS - RATA KESAMPING */
-.hero-footer { 
-    display: flex; justify-content: space-between; align-items: center; margin-top: 60px; 
-}
-
+/* HERO FOOTER - TOOLS RATA SAMPING */
+.hero-footer { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 60px; }
 .tools-container { display: flex; flex-direction: column; gap: 12px; }
 .tools-label { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; color: #999; }
 .tools-wrapper { display: flex; gap: 12px; align-items: center; }
 
 .tool-item {
-    padding: 8px 18px;
-    background: white;
-    border: 2.5px solid var(--black);
-    font-weight: 800;
-    font-size: 14px;
-    box-shadow: 3px 3px 0 var(--black);
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+    padding: 8px 18px; background: white; border: 2.5px solid var(--black);
+    font-weight: 800; font-size: 14px; box-shadow: 3px 3px 0 var(--black);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
 }
 
-/* ANIMASI HOVER KE WARNA ASLI */
-.tool-item:hover { 
-    transform: translateY(-8px) rotate(-3deg); 
-    box-shadow: 6px 6px 0 var(--black);
-    color: white;
-}
-
-.tool-item.figma:hover { background: var(--figma); border-color: var(--black); }
-.tool-item.ai:hover { background: var(--ai); border-color: var(--black); }
-.tool-item.ps:hover { background: var(--ps); border-color: var(--black); }
-.tool-item.ae:hover { background: var(--ae); border-color: var(--black); }
-.tool-item.pr:hover { background: var(--pr); border-color: var(--black); }
+/* HOVER COLORS */
+.tool-item:hover { transform: translateY(-8px) rotate(-3deg); box-shadow: 6px 6px 0 var(--black); color: white; }
+.figma:hover { background: var(--figma) !important; }
+.ai:hover { background: var(--ai) !important; }
+.ps:hover { background: var(--ps) !important; }
+.ae:hover { background: var(--ae) !important; }
+.pr:hover { background: var(--pr) !important; }
 
 .scroll-down { font-size: 40px; color: var(--orange); font-weight: bold; animation: bounce 2s infinite; }
 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
